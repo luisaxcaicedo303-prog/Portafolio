@@ -1,0 +1,353 @@
+/* ==========================================================================
+   ESTILOS GLOBALES
+   ========================================================================== */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    background-color: #1a1d21; 
+    color: #F8F3ED; 
+    font-family: 'Plus Jakarta Sans', sans-serif; 
+}
+
+/* ==========================================================================
+   NAVEGACIÓN PRINCIPAL
+   ========================================================================== */
+header { 
+    width: 100%; 
+    display: flex; 
+    justify-content: center; 
+    position: fixed; 
+    top: 0; 
+    z-index: 1000; 
+    padding: 25px 0;
+}
+
+.navbar {
+    background-color: rgba(18, 18, 18, 0.95); 
+    border-radius: 50px; 
+    padding: 15px 40px; 
+    border: 1px solid rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(15px); 
+}
+
+.nav-links { 
+    list-style: none;
+    display: flex; 
+    gap: 20px; 
+}
+
+.nav-links a { 
+    text-decoration: none; 
+    color: rgba(255, 255, 255, 0.5); 
+    font-weight: 700; 
+    padding: 12px 25px; 
+    transition: 0.3s;
+}
+
+.nav-links a.active, .nav-links a:hover { 
+    color: #fff; 
+    background: #3d4248; 
+    border-radius: 30px; 
+}
+
+/* ==========================================================================
+   SECCIÓN HERO (PRESENTACIÓN)
+   ========================================================================== */
+.hero { 
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding: 0 10%; 
+}
+
+.hero-title { 
+    font-size: 110px; 
+    font-family: 'Outfit', sans-serif; 
+    font-weight: 800; 
+    line-height: 0.9; 
+    margin-bottom: 30px; 
+}
+
+.parrafoprincipal { 
+    font-size: 24px;
+    max-width: 800px;
+    opacity: 0.7; 
+}
+
+/* ==========================================================================
+   CONTENEDOR BIOGRAFÍA Y PESTAÑAS (TABS)
+   ========================================================================== */
+.contenedor-biografia { 
+    min-height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 80px; 
+    padding: 100px 10%; 
+    background: #2c3036; 
+}
+
+.imagen-perfil img { 
+    width: 450px; 
+    border-radius: 40px; 
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5); 
+}
+
+.texto-justificado {
+    text-align: justify;
+}
+
+input[type="radio"] { 
+    display: none; 
+}
+
+.opciones { 
+    background: rgba(0, 0, 0, 0.3); 
+    padding: 12px; 
+    border-radius: 25px; 
+    display: inline-block; 
+    margin-bottom: 40px; 
+}
+
+.nav-sub { 
+    list-style: none; 
+    display: flex; 
+    gap: 10px;
+}
+
+.tab-label { 
+    padding: 18px 40px; 
+    cursor: pointer; 
+    border-radius: 20px;  
+    color: rgba(255, 255, 255, 0.4); 
+    font-weight: 800; 
+    transition: 0.3s; 
+    display: block; 
+}
+
+#perfil:checked ~ .opciones label[for="perfil"],
+#skills:checked ~ .opciones label[for="skills"],
+#cert:checked ~ .opciones label[for="cert"] { 
+    background: #4a4f55; 
+    color: #fff; 
+}
+
+.contenido-tab { 
+    display: none; 
+    font-size: 20px; 
+    max-width: 600px; 
+    animation: fadeIn 0.4s ease; 
+}
+
+#perfil:checked ~ #mi-perfil, 
+#skills:checked ~ #mis-habilidades, 
+#cert:checked ~ #mis-cert { 
+    display: block; 
+}
+
+/* ==========================================================================
+   HABILIDADES (SKILLS)
+   ========================================================================== */
+.grid-skills { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); 
+    gap: 30px; 
+}
+
+.skill-card { 
+    background: rgba(255, 255, 255, 0.05); 
+    padding: 40px 20px; 
+    border-radius: 30px; 
+    text-align: center; 
+    border: 1px solid rgba(255,255,255,0.05); 
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.15);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.skill-card img {
+    width: 60px; 
+    margin-bottom: 25px; 
+}
+
+.skill-card span { 
+    font-weight: 800; 
+    font-size: 16px; 
+    display: block; 
+}
+
+/* ==========================================================================
+   SECCIÓN WORK (EN PROCESO)
+   ========================================================================== */
+.seccion-proyectos {
+    padding: 120px 10%;
+    text-align: center;
+    background: #1a1d21;
+}
+
+.proyectos-mensaje {
+    background: #2c3036;
+    padding: 60px;
+    border-radius: 40px;
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+}
+
+.icon-proceso {
+    font-size: 50px;
+    margin-bottom: 20px;
+    animation: spin 4s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   SECCIÓN DIPLOMAS Y ACADÉMICA
+   ========================================================================== */
+.seccion-diplomas { 
+    padding: 120px 10%; 
+    background: #2c3036; 
+    text-align: center; 
+}
+
+.titulo-seccion { 
+    font-size: 50px; 
+    font-family: 'Outfit', sans-serif; 
+    margin-bottom: 60px;
+}
+
+.grid-diplomas { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 40px;
+}
+
+.card-diploma {
+    background: #1a1d21; 
+    padding: 50px 30px; 
+    border-radius: 35px; 
+    border-top: 6px solid #4a4f55; 
+    transition: all 0.3s ease; 
+}
+
+.card-diploma h3 {
+    transition: color 0.3s ease;
+}
+
+.card-diploma:hover h3 {
+    color: #ffd700;
+    transform: translateY(-5px);
+}
+
+.card-diploma.obtenido { 
+    border-top-color: #ffd700;
+}
+
+.card-diploma.en-proceso { 
+    border-top-color: #a277ff;
+}
+
+.badge-diploma { 
+    display: inline-block; 
+    padding: 8px 18px; 
+    border-radius: 30px; 
+    font-size: 12px; 
+    font-weight: 900; 
+    margin-bottom: 25px; 
+    text-transform: uppercase; 
+}
+
+.badge-diploma.oficial { 
+    background: rgba(255, 215, 0, 0.1); 
+    color: #ffd700; 
+}
+
+.badge-diploma.proceso { 
+    background: rgba(162, 119, 255, 0.1); 
+    color: #a277ff; 
+}
+
+.icono-curso {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   SECCIÓN CONTACTO
+   ========================================================================== */
+.seccion-contacto {
+    padding: 120px 10%;
+    background: #2c3036;
+    text-align: center;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.social-item {
+    background: #1a1d21;
+    padding: 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 800;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.social-item img {
+    width: 40px;
+    height: 40px;
+}
+
+.icon-white {
+    filter: invert(1);
+}
+
+.social-item:hover {
+    transform: translateY(-10px) scale(1.05);
+    background: #3d4248;
+    border-color: #ffd700;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer-simple { 
+    padding: 80px; 
+    text-align: center; 
+    background: #1a1d21; 
+    opacity: 0.5; 
+    font-weight: 700; 
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; transform: translateY(10px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
